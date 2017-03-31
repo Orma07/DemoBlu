@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoBlu.ScanPage">
+    <StackLayout Padding="10">
+            <Label x:Name="statusLabel" HorizontalTextAlignment="Center"/>
+            <ActivityIndicator x:Name="spinner" IsRunning="True"/>
+            <Button Text="Attiva bluetooth" IsVisible="False" x:Name="bleBanner"/>
+            <Button Text="Attiva Gps" IsVisible="False" x:Name="gpsBanner"/>
+            <Button Text="Scan device" x:Name="scaButton" />
+        <Label x:Name="status" Text="Nessuno stato ricevuto" HorizontalTextAlignment="Center"/>
+        <Entry x:Name="input" IsVisible="False"/>
+        <Button x:Name="sendInput" IsVisible="False" Text="Invia" Clicked="sendMessage"/>
+        <ActivityIndicator x:Name="indicatorId" IsRunning="True" IsVisible="False"/>
+        <ListView x:Name="deviceList" IsVisible="True" ItemTapped="Handle_ItemTapped">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                    <TextCell Text="{Binding Name}"/>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+</ContentPage>
